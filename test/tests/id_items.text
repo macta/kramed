@@ -2,4 +2,4 @@
 
 - item 1
 - item 2
-{#list-id}
+{:#list-id}
