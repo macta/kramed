@@ -6,4 +6,6 @@
 
 # Paragraph
 
-This is some text {: .txt-class }
+This is some text {:.txt-class }
+
+More text with an ![image](xyz.com/img.png){:.img-class}
