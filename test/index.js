@@ -125,13 +125,16 @@ main:
         failed++;
         failures.push(filename);
 
-        text = text.substring(
-          Math.max(j - 30, 0),
-          Math.min(j + 30, text.length));
+
+          const previewSize = 75;
+
+          text = text.substring(
+          Math.max(j - previewSize, 0),
+          Math.min(j + previewSize, text.length));
 
         html = html.substring(
-          Math.max(j - 30, 0),
-          Math.min(j + 30, html.length));
+          Math.max(j - previewSize, 0),
+          Math.min(j + previewSize, html.length));
 
         console.log(
           '\n#%d. %s failed at offset %d. Near: "%s".\n',
@@ -322,7 +325,7 @@ function time(options) {
 function fix(options) {
   ['tests', 'original', 'new'].forEach(function(dir) {
     try {
-      fs.mkdirSync(path.resolve(__dirname, dir), 0755);
+      fs.mkdirSync(path.resolve(__dirname, dir), 755);
     } catch (e) {
       ;
     }
